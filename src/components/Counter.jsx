@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { decrement, increment, reset } from '../redux/counterSlice'
 import { useState } from 'react'
 
+
 function Counter() {
-  //state to hold the value from input box
-  const [range , setRange] = useState("")
+ 
+  //state to hold the input value
+  const [range , setRange]= useState("")
   
 
   //hook to dispatch a function in action
@@ -26,9 +28,10 @@ console.log(range);
               <button onClick={()=>dispatch(increment(Number(range)))} className='btn btn-success p-3 ms-3'>Increment</button>
           </div>
       </div>
-      <div className='mt-5 w-100'>
-        <input type="text" onChange={(e)=>setRange(e.target.value)} className='form-control' style={{borderColor:'blue'}} placeholder='Enter the Range' />
+      <div className='w-100 mt-5'>
+        <input type="text" onChange={(e)=>setRange(e.target.value)} className='form-control' placeholder='Enter the Range'  style={{borderColor:'blue'}}/>
       </div>
+     
       
    </>
   )
