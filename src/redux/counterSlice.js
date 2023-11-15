@@ -11,9 +11,9 @@ import { createSlice } from "@reduxjs/toolkit";
        //logics to update state
 
        //function to increment number
-       increment:(state , action)=>{
+       increment:(state ,action)=>{
         //if its a argument function then it can only be accessed by action and value in payload
-         state.value += action.payload
+         state.value +=action.payload
        },
        //function to decrement number
        decrement:(state,action)=>{

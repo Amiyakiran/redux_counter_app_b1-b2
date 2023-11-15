@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { decrement, increment, reset } from '../redux/counterSlice'
+import { useState } from 'react'
 
 function Counter() {
-  //state to hold value from input box
-   const [range , setRange] = useState("")
+  //state to hold the value from input box
+  const [range , setRange] = useState("")
+  
 
   //hook to dispatch a function in action
   const dispatch = useDispatch()
   //component can access the state by using useSelector Hook
   const count = useSelector((state)=>state.counter.value)
 
-//range
 console.log(range);
 
   return (
@@ -25,10 +26,10 @@ console.log(range);
               <button onClick={()=>dispatch(increment(Number(range)))} className='btn btn-success p-3 ms-3'>Increment</button>
           </div>
       </div>
-      {/* input box */}
-      <div>
-      <input onChange={(e)=>setRange(e.target.value)} type="text" className='form-control w-100 mt-3' placeholder='enter the range' style={{borderColor:'blue'}}  />
-    </div>
+      <div className='mt-5 w-100'>
+        <input type="text" onChange={(e)=>setRange(e.target.value)} className='form-control' style={{borderColor:'blue'}} placeholder='Enter the Range' />
+      </div>
+      
    </>
   )
 }
